@@ -17,5 +17,5 @@ Maven - Day2 - topics need to be covered
            What/why are <scm> tags in pom.xml?
            What is <distributedManagement> section in pom.xml file?
            Difference b/w SNAPSHOT & RELEASE versions?
-           
-        
+           Freestyle job vs Maven job?
+           Blue ocean vs pipleine script?
