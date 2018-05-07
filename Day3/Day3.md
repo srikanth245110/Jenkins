@@ -1,4 +1,4 @@
-Maven - Day2 - topics need to be covered
+Maven - Day3 - topics need to be covered
 
         1. Jenkins + Maven + GitHub + Nexus examples.
         
@@ -8,7 +8,7 @@ Maven - Day2 - topics need to be covered
               1.4. Same above scenario with Blue ocean plugin.
               1.5. Maven release with manual steps. (without a maven release plugin & drawbacks and plus points with this).
 
-        2. How to practice the covered topics in Day-2.
+        2. How to practice the covered topics in Day-3.
         
            Interview Questions:
            
