@@ -1,6 +1,6 @@
 Jenkins - Day2 - topics need to be covered
 
-        1. Manage Jenkins --> Manage plugins.
+        1. Manage Jenkins --> Manage plugins (Different types of backup plugins).
         
         2. Manage Jenkins --> Configure System.
         
@@ -13,6 +13,7 @@ Jenkins - Day2 - topics need to be covered
         7. Manage Jenkins --> Manage Nodes.
 
         8. Manage Jenkins -->
+        
                 8.1. Reload Configuration from Disk.
                 8.2. System Information.
                 8.3. System Log.
@@ -23,18 +24,16 @@ Jenkins - Day2 - topics need to be covered
                
          9. Jenkins commands --> restart, safeRestart, build etc
         
-        7. Interview questions?
+         10. Interview questions?
         
                 What is difference between restart, safeRestart.
                 How to configure credentials?
+                How to add user?
+                How to restrict a user to only read/build/configure ect jobs?
+                Different types of permissions?
+                Jobs wise persmission?
+                How to setup the Java, maven, git etc paths in jenkins?
                 
-                How to configure the upstream & downstream jobs?
-                What is downstream & upstream job?
-                What is piepline in downstream & upstream job (show an example with build pipeline plugin) ?
-                How to install/uninstall/upgrade a plugin?
-                Number of ways to install?
-                What is *.hpi & hpi stands for?
-                Difference between freestyle & maven projects/jobs?
                 
                 
                 https://github.com/jenkinsci/job-dsl-plugin/wiki/Tutorial---Using-the-Jenkins-Job-DSL
