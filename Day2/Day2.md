@@ -1,6 +1,6 @@
 Jenkins - Day2 - topics need to be covered
 
-        1. Manage Jenkins --> Manage plugins (Different types of backup plugins).
+        1. Manage Jenkins --> Manage plugins (Different types of backup plugins). Uninstall dependenct plugins.
         
         2. Manage Jenkins --> Configure System.
         
