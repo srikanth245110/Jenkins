@@ -6,17 +6,22 @@ Maven - Day3 - topics need to be covered
                 1.3. Pipeline.
                 1.4. Multibranch pipeline.
         
-        2. Jenkins + Maven + GitHub + Nexus examples.
+        2. Important feature of Jenkins job configuration.
+                
+                2.1. 
         
-              1.1. Freestyle job as to build & deploy the artifacts to nexus & tomcat.
-              1.2. Maven job as to build & deploy & release the artifacts to nexus & tomcat.
-              1.3. The same above scenario with pipeline script.
-              1.4. Same above scenario with Blue ocean plugin.
-              1.5. Maven release with manual steps. (without a maven release plugin & drawbacks and plus points with this).
+        3. Jenkins + Maven + GitHub + Nexus examples.
+        
+                3.1. Freestyle job as to build & deploy the artifacts to nexus & tomcat.
+                3.2. Maven job as to build & deploy & release the artifacts to nexus & tomcat.
+                3.3. The same above scenario with pipeline script.
+                3.4. Same above scenario with Blue ocean plugin.
+                3.5. Maven release with manual steps. (without a maven release plugin & drawbacks and plus points with this).
 
-        3. How to practice the covered topics in Day-3.
+        4. How to practice the covered topics in Day-3.
         
-           Interview Questions:
+
+        5. Interview Questions:
            
            How to create a job in Jenkins? ((Click on NewItem--> explain all the configuration details)
            How to setup a CI job?
