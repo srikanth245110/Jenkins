@@ -27,6 +27,8 @@ Jenkins - Day1 - topics need to be covered
                 3.20. JIRA plugin.
                 3.21. Blue Ocean plugin.
                 3.22. Mask Passwords.
+                3.23. Maven Integration.
+                3.24. Maven Release Plug-in.
         
         4. Create a freestyle job & echo message & build periodical.
         
