@@ -30,13 +30,17 @@ Maven - Day3 - topics need to be covered
                         2.11. Build periodically.
                         2.12. Poll SCM.
                         2.13. GitHub hook trigger for GITScm polling.
+                        2.14. Build whenever a SNAPSHOT dependency is built (maven project)
                         
                  Build Environment:
                         
                         2.14. Delete workspace before build starts.
                         2.15. Mask passwords.
-                  
-                 Build:
+                        2.16. Maven release build (maven release plugin, its visible only for maven project).
+                 
+                 Pre-Steps: (maven project) Options are same as below "Build: for free style project".
+                 
+                 Build: for free style project.
                         2.16. Execute Groovy script.
                         2.17. Execute Windows batch command.
                         2.18. Execute shell.
@@ -45,6 +49,40 @@ Maven - Day3 - topics need to be covered
                         2.21. Invoke top-level maven targets.
                         2.22. Use builders from another project.
                    
+                  Build: for maven project.
+                        
+                        2.23. Maven Version.
+                        2.24. Root POM.
+                        2.25. Goals and options.
+                        2.26. MAVEN_OPTS (Advanced..)
+                        2.27. Use private Maven repository (Advanced..)
+                        2.28. Use custom workspace - Settings, Global Settings files paths (Advanced..)                        
+                  
+                  Post-Steps: (maven project) Options are same as above section "Pre-Steps". Addition optiols are..
+                        
+                        2.29. Run only if build succeeds.
+                        2.30. Run only if build succeeds or is unstable.
+                        2.31. Run regardless of build result.
+                    
+                  Build Settings: (Maven Project)
+                        
+                        2.32. Email Nitification.
+                        
+                  Post-build Actions: (for both maven & freestyle)
+                        
+                        2.33. Email Nitification. (only for freestyle)
+                        2.34. Ediatble Email Notification.
+                        2.35. Build other projects.
+                        2.36. Groovy Postbuild.
+                        2.37. Public HTML reports.
+                        2.38. Record JaCoCo coverage report.
+                        2.39. Delete workspace when build is done.
+                        2.40. Public Junit test result report. (free style).
+                        2.41. Trigger Parameterized builds on other projects.
+                        2.42. SonarQube analysis with Maven.
+                        
+                        
+                  
                 
         
         3. Jenkins + Maven + GitHub + Nexus examples.
