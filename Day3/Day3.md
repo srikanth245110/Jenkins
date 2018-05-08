@@ -33,7 +33,17 @@ Maven - Day3 - topics need to be covered
                         
                  Build Environment:
                         
-                        Delete workspace before build starts
+                        2.14. Delete workspace before build starts.
+                        2.15. Mask passwords.
+                  
+                 Build:
+                        2.16. Execute Groovy script.
+                        2.17. Execute Windows batch command.
+                        2.18. Execute shell.
+                        2.19. Invoke Ant.
+                        2.20. Invoke Gradle script.
+                        2.21. Invoke top-level maven targets.
+                        2.22. Use builders from another project.
                    
                 
         
