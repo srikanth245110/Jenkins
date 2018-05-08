@@ -13,7 +13,7 @@ Jenkins - Day1 - topics need to be covered
                 3.6. Run Condition Plugin.
                 3.7. EnvInject Plugin.
                 3.8. Configuration Slicing.
-                3.9. Rebuild plugin.
+                3.9. Rebuilder plugin.
                 3.10. Backup plugin.
                 3.11. Sonar plugin.
                 3.12. Checkstyle plugin.
@@ -29,6 +29,11 @@ Jenkins - Day1 - topics need to be covered
                 3.22. Mask Passwords.
                 3.23. Maven Integration.
                 3.24. Maven Release Plug-in.
+                3.25. Parameterized Remote Trigger Plugin.
+                3.26. Credentials Plugin.
+                3.27. Nested view plugin (view).
+                3.28. Pipeline.
+                3.29. 
         
         4. Create a freestyle job & echo message & build periodical.
         
