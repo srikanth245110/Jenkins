@@ -33,7 +33,8 @@ Jenkins - Day1 - topics need to be covered
                 3.26. Credentials Plugin.
                 3.27. Nested view plugin (view).
                 3.28. Pipeline.
-                3.29. 
+                3.29. Workspace Cleanup Plugin.
+                3.30. SSH Slaves plugin.
         
         4. Create a freestyle job & echo message & build periodical.
         
