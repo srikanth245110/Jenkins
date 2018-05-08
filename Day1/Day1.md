@@ -26,6 +26,7 @@ Jenkins - Day1 - topics need to be covered
                 3.19. Build Monitor plugin.
                 3.20. JIRA plugin.
                 3.21. Blue Ocean plugin.
+                3.22. Mask Passwords.
         
         4. Create a freestyle job & echo message & build periodical.
         
