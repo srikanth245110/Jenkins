@@ -1,6 +1,7 @@
 Maven - Day3 - topics need to be covered
 
         1. Different types of Jenkins job templates.
+        
                 1.1. Freestyle project.
                 1.2. Maven project.
                 1.3. Pipeline.
@@ -20,8 +21,19 @@ Maven - Day3 - topics need to be covered
                 Source Code Management:
                 
                         2.7. Git. (Repository URL, Credentials, Branch Specifier, Checkout to a sub-directpry, Checkout to specific local branch).
-                        2.8. Subversion.
+                        2.8. Subversion. 
                         2.9. Rational Team Concert (RTC).
+                
+                 Build Triggers:
+                 
+                        2.10. Build after other projects are built (for upstream job configuration).
+                        2.11. Build periodically.
+                        2.12. Poll SCM.
+                        2.13. GitHub hook trigger for GITScm polling.
+                        
+                 Build Environment:
+                        
+                        Delete workspace before build starts
                    
                 
         
