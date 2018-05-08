@@ -4,7 +4,28 @@ Jenkins - Day1 - topics need to be covered
 
         2. Jenkins setup? & Describe the home page.
         
-        3. Maven Jenkins --> Manage plugins. (Install maven integration plugin to get the new job template).
+        3. Maven Jenkins --> Manage plugins. (Install maven integration plugin to find the new job template).
+                3.1. Job Configuration History plugin.
+                3.2. Read-only configurations.
+                3.3. Build Pipeline (view).
+                3.4. Parameterized Trigger Plugin.
+                3.5. Template Project plugin.
+                3.6. Run Condition Plugin.
+                3.7. EnvInject Plugin.
+                3.8. Configuration Slicing.
+                3.9. Rebuild plugin.
+                3.10. Backup plugin.
+                3.11. Sonar plugin.
+                3.12. Checkstyle plugin.
+                3.13. JaCoCo plugin.
+                3.14. Next Build Number plugin.
+                3.15. Groovy Postbuild plugin.
+                3.16. MSBuild plugin.
+                3.17. NAnt plugin.
+                3.18. Team Concert (for RTC).
+                3.19. Build Monitor plugin.
+                3.20. JIRA plugin.
+                3.21. Blue Ocean plugin.
         
         4. Create a freestyle job & echo message & build periodical.
         
