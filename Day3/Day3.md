@@ -8,7 +8,22 @@ Maven - Day3 - topics need to be covered
         
         2. Important feature of Jenkins job configuration.
                 
-                2.1. 
+                General Section:
+
+                        2.1. This project is parameterized
+                        2.2. Discard old builds.
+                        2.3. Disable this project.
+                        2.4. Use custom workspace.
+                        2.5. Restrict where this jib can run. (slave selection).
+                        2.6. Execute concurrent builds if necessary (JDK selection).
+                        
+                Source Code Management:
+                
+                        2.7. Git. (Repository URL, Credentials, Branch Specifier, Checkout to a sub-directpry, Checkout to specific local branch).
+                        2.8. Subversion.
+                        2.9. Rational Team Concert (RTC).
+                   
+                
         
         3. Jenkins + Maven + GitHub + Nexus examples.
         
