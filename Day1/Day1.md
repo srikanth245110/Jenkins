@@ -4,7 +4,7 @@ Jenkins - Day1 - topics need to be covered
 
         2. Jenkins setup? & Describe the home page.
         
-        3. Maven Jenkins --> Manage plugins. (Install maven integration plugin to find the new job template).
+        3. Manage Jenkins --> Manage plugins. (Install 'maven integration' plugin to find the new job template).
                 3.1. Job Configuration History plugin.
                 3.2. Read-only configurations.
                 3.3. Build Pipeline (view).
@@ -50,9 +50,9 @@ Jenkins - Day1 - topics need to be covered
                 What is upstream & downstream?
                 How to configure the upstream & downstream jobs?
                 What is downstream & upstream job?
-                What is piepline in downstream & upstream job (show an example with build pipeline plugin) ?
+                What is piepline in downstream & upstream job (show an example with 'build pipeline' plugin) ?
                 How to install/uninstall/upgrade a plugin?
-                Number of ways to install?
+                Number of ways to install the plugin?
                 What is *.hpi & hpi stands for?
                 Difference between freestyle & maven projects/jobs?
                 
