@@ -1,6 +1,6 @@
 Jenkins - Day1 - topics need to be covered
 
-        1. What is Jenkins & CI-CD image by Atlassian?
+        1. What is Jenkins & CI-CD defined by Atlassian?
 
         2. Jenkins setup? & Describe the home page.
         
