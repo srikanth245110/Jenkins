@@ -24,4 +24,6 @@
   22. How to creare & configure slave/node in jenkins?
   23. What arte the plugin you installed?
   24. How to copy the artifacts from one job to another job?
-  
+  25. How to add Java/Maven/Git paths in jenkins? (Global Tool Configuration).
+  26. What is "Manage Plugins"?
+  27. 
