@@ -13,10 +13,13 @@
   11. Matrix/Project based security.
   12. how to add a user.
   13. How to install Jenkins. (minimum Java should be installed).
-  14. Different types of Build errors? (3 types. 1-->Network or anyother issues which whould be fixed by ALM/LTS teams, 2-->Some errors which whould be fixed by Build Team, for example, job wrong congiguration, 3-->Some other errors which whould be fixed by Dev Team, for example, Compilation errros, test case failures etc.)
-  15. What are the different types of job templted you used. Maven, free-style, pipeline etc.
+  14. Different types of Build errors/issues you faced in your work environemnt? (3 types. 1-->Network or anyother issues which whould be fixed by ALM/LTS/Support teams, 2-->Some errors which whould be fixed by Build Team, for example, wrong job congiguration, 3-->Some other errors which whould be fixed by Dev Team, for example, Compilation errros, test case failures etc.)
+  15. What are the different types of job templtes you used. Maven, free-style, pipeline etc.
   16. Up-Stream, Down-Stream jobs (pipeline setup)?
   17. What is Parameterized job?
   18. Pipeline script for CI/CD?
   19. What are the automations you have done? Using groovy script create/rename/delete/disable the Jenkins jobs?
   20. How to take back up? (backup plugin)
+  21. What is Jenkins noide/slave?
+  22. How to creare & configure slave/node in jenkins?
+  
