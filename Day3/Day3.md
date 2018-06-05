@@ -30,7 +30,6 @@ Maven - Day3 - topics need to be covered
                         2.11. Build periodically.
                         2.12. Poll SCM.
                         2.13. GitHub hook trigger for GITScm polling.
-                        2.14. Build whenever a SNAPSHOT dependency is built (maven project)
                         
                  Build Environment:
                         
