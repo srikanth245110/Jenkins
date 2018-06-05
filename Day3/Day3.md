@@ -79,23 +79,17 @@ Maven - Day3 - topics need to be covered
                         2.40. Public Junit test result report. (free style).
                         2.41. Trigger Parameterized builds on other projects.
                         2.42. SonarQube analysis with Maven.
-                        
-                        
-                  
                 
         
         3. Jenkins + Maven + GitHub + Nexus examples.
         
                 3.1. Freestyle job as to build & deploy the artifacts to nexus & tomcat.
-                3.2. Maven job as to build & deploy & release the artifacts to nexus & tomcat.
+                3.2. Maven job as to build & deploy & release the artifacts to nexus & deploy the same package to tomcat (as per Phase-1 concept).
                 3.3. The same above scenario with pipeline script.
                 3.4. Same above scenario with Blue ocean plugin.
                 3.5. Maven release with manual steps. (without a maven release plugin & drawbacks and plus points with this).
 
-        4. How to practice the covered topics in Day-3.
-        
-
-        5. Interview Questions:
+        4. Interview Questions:
            
            How to create a job in Jenkins? ((Click on NewItem--> explain all the configuration details)
            How to setup a CI job?
