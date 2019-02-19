@@ -35,6 +35,8 @@ Jenkins - Day1 - topics need to be covered
                 3.28. Pipeline.
                 3.29. Workspace Cleanup Plugin.
                 3.30. SSH Slaves plugin.
+                3.31. HTML Publisher
+                3.32. Test Results Analyzer Plugin
         
         4. Create a freestyle job & echo message & build periodical.
         
