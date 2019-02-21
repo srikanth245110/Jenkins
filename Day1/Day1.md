@@ -8,7 +8,7 @@ Jenkins - Day1 - topics need to be covered
                 3.1. Job Configuration History plugin.
                 3.2. Read-only configurations.
                 3.3. Build Pipeline (view).
-                3.4. Parameterized Trigger Plugin.
+                3.4. Nested view plugin (view).
                 3.5. Template Project plugin.
                 3.6. Run Condition Plugin.
                 3.7. EnvInject Plugin.
@@ -30,15 +30,14 @@ Jenkins - Day1 - topics need to be covered
                 3.23. Maven Integration.
                 3.24. Maven Release Plug-in.
                 3.25. Parameterized Remote Trigger Plugin.
-                3.26. Credentials Plugin.
-                3.27. Nested view plugin (view).
+                3.26. Parameterized Trigger Plugin.
+                3.27. Credentials Plugin.
                 3.28. Pipeline.
                 3.29. Workspace Cleanup Plugin.
                 3.30. SSH Slaves plugin.
                 3.31. HTML Publisher
                 3.32. Test Results Analyzer Plugin
-                3.33. Parameterized Trigger Plugin
-        
+                
         4. Create a freestyle job & echo message & build periodical.
         
         5. Setup Upstream & downstream jobs. 
