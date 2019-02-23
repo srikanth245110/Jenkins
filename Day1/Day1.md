@@ -39,6 +39,7 @@ Jenkins - Day1 - topics need to be covered
                 3.32. Test Results Analyzer Plugin.
                 3.33. Git Parameter.
                 3.34. Job and Node ownership plugin.
+                3.35. Active Choices Plugin
                 
         4. Create a freestyle job & echo message & build periodical.
         
