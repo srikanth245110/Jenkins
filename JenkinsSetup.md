@@ -36,7 +36,7 @@
         Start the Jenkins: sudo systemctl start jenkins
         Stop the Jenkins: sudo systemctl stop jenkins
         Uninstall Jenkins: sudo apt-get remove --auto-remove jenkins -y
-        Uninstall Jenkins with dependencies:sudo apt-get remove --auto-remove jenkins -y
+        Uninstall Jenkins with dependencies: sudo apt-get remove --auto-remove jenkins -y
         delete your local/config files for jenkins: sudo apt-get purge jenkins -y (Or) sudo apt-get purge --auto-remove jenkins -y
     
     Important paths:
@@ -67,5 +67,10 @@
 
 ![image](https://user-images.githubusercontent.com/24622526/98562244-1fe7c600-22aa-11eb-8643-05e6097b1bbd.png)
 
+    If you see the below error either you are using very weak network or some issue. Because of when you click on any option out Jenkins server try to connect to the internet and download the required plugins from Jenkins plugins repo. Click on retry.
 
+![image](https://user-images.githubusercontent.com/24622526/98562779-b4eabf00-22aa-11eb-9c7a-768565eeec25.png)
 
+    Plugins installation process
+
+![image](https://user-images.githubusercontent.com/24622526/98563789-e3b56500-22ab-11eb-9ea8-eaf695bd049f.png)
