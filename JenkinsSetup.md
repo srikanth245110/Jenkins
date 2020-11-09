@@ -63,14 +63,26 @@
 
 ![image](https://user-images.githubusercontent.com/24622526/98562081-f169eb00-22a9-11eb-8a5f-bfb71caa7d0c.png)
 
-    Select the first one if you are not sure about the plugins you want to install and if you want to setup jenkins with default list of plugin. Select second option if you want to select the plugin and if you are sure about to install the plugins. Here in this example choosing first one.
+    Select the first one if you are not sure about the plugins you want to install and if you want to setup jenkins with default list of plugin. Select second option if you want to select the plugin and if you are sure about to install the required plugins. Here in this example choosing first one.
 
 ![image](https://user-images.githubusercontent.com/24622526/98562244-1fe7c600-22aa-11eb-8643-05e6097b1bbd.png)
 
-    If you see the below error either you are using very weak network or some issue. Because of when you click on any option out Jenkins server try to connect to the internet and download the required plugins from Jenkins plugins repo. Click on retry.
+    If you see the below error either you are using very weak network or some issue. Because when you click on any option our Jenkins server try to connect to the internet and download the required plugins from Jenkins plugins repo. Click on retry.
 
 ![image](https://user-images.githubusercontent.com/24622526/98562779-b4eabf00-22aa-11eb-9c7a-768565eeec25.png)
 
     Plugins installation process
 
 ![image](https://user-images.githubusercontent.com/24622526/98563789-e3b56500-22ab-11eb-9ea8-eaf695bd049f.png)
+
+    Signup for new admin user, so that it will remove both the default user 'admin' and password from /var/lib/jenkins/secrets/initialAdminPassword. If you want to proceed with 'admin' user click on 'Skip and Continus as admin'. In this example, I am creating a new user.
+
+![image](https://user-images.githubusercontent.com/24622526/98564226-64746100-22ac-11eb-9ce3-5be6e4af7c5d.png)
+
+    Save and Finish
+
+![image](https://user-images.githubusercontent.com/24622526/98564545-c7fe8e80-22ac-11eb-9aab-4d7a2c320422.png)
+
+    Click on "Start using Jenkins" button, it will navigate to Jenkins home page.
+    
+![image](https://user-images.githubusercontent.com/24622526/98564695-f54b3c80-22ac-11eb-9984-6e83026a2554.png)
