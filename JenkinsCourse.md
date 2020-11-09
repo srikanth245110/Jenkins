@@ -1,15 +1,11 @@
 *Jenkins concepts*:
 
-**Jenkins installation**: https://www.jenkins.io/doc/book/installing/
+**Jenkins installation**: https://www.jenkins.io/doc/book/installing/ 
 
 	container (docker)
-	container (k8s) - pending
+	container (k8s) - pending to prepare doc
 	war deployment to tomcat
-	run as service (on Linux/Unix or windows) - https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
-		/var/lib/jenkins >> Jenkins Home
-		sudo cat /var/lib/jenkins/secrets/initialAdminPassword >> initial admin password for the user admin
-		/etc/init.d/jenkins  >> Setup Jenkins as a daemon launched on start
-		/var/log/jenkins/jenkins.log >> console log output to the file
+	run as service (on Linux/Unix or windows) - https://www.jenkins.io/doc/book/installing/linux/#debianubuntu (Or) https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetup.md
 
 **Jenkins node setup (windows, linux)**
 
