@@ -30,6 +30,15 @@
     sudo apt-get update
     sudo apt-get install jenkins -y
     
+    sudo systemctl status jenkins
+    sudo systemctl restart jenkins
+    sudo systemctl start jenkins
+    sudo systemctl stop jenkins
+    
+    Uninstall Jenkins: sudo apt-get remove --auto-remove jenkins -y
+    Uninstall Jenkins with dependencies:sudo apt-get remove --auto-remove jenkins -y
+    delete your local/config files for jenkins: sudo apt-get purge jenkins -y (Or) sudo apt-get purge --auto-remove jenkins -y
+    
     Important paths:
     	JENKINS_HOME = /var/lib/jenkins
         initial admin password file for the user admin: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
@@ -39,7 +48,7 @@
         Jenkins user and group: jenkins (see the details in  /etc/default/jenkins)
         location of the jenkins war file: /usr/share/jenkins/jenkins.war
         PIDFILE=/var/run/jenkins/jenkins.pid
-        
+        If jenkins loaded successfully it will generate: /etc/rc.d/init.d/jenkins
     
     Launch the URL in any browser: http://<public-ip-address>:8080
     
