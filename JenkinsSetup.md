@@ -30,14 +30,14 @@
     sudo apt-get update
     sudo apt-get install jenkins -y
     
-    sudo systemctl status jenkins
-    sudo systemctl restart jenkins
-    sudo systemctl start jenkins
-    sudo systemctl stop jenkins
-    
-    Uninstall Jenkins: sudo apt-get remove --auto-remove jenkins -y
-    Uninstall Jenkins with dependencies:sudo apt-get remove --auto-remove jenkins -y
-    delete your local/config files for jenkins: sudo apt-get purge jenkins -y (Or) sudo apt-get purge --auto-remove jenkins -y
+    Few commands:
+        Check the status of Jenkins: sudo systemctl status jenkins
+        Restart Jenkins: sudo systemctl restart jenkins
+        Start the Jenkins: sudo systemctl start jenkins
+        Stop the Jenkins: sudo systemctl stop jenkins
+        Uninstall Jenkins: sudo apt-get remove --auto-remove jenkins -y
+        Uninstall Jenkins with dependencies:sudo apt-get remove --auto-remove jenkins -y
+        delete your local/config files for jenkins: sudo apt-get purge jenkins -y (Or) sudo apt-get purge --auto-remove jenkins -y
     
     Important paths:
     	JENKINS_HOME = /var/lib/jenkins
@@ -52,5 +52,20 @@
     
     Launch the URL in any browser: http://<public-ip-address>:8080
     
+![image](https://user-images.githubusercontent.com/24622526/98561852-a5b74180-22a9-11eb-9319-5b9f59639077.png)
+
+
+    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    
+![image](https://user-images.githubusercontent.com/24622526/98562037-de571b00-22a9-11eb-8eb9-674ce71b3597.png)
+
+    Paste the password and click on continue
+
+![image](https://user-images.githubusercontent.com/24622526/98562081-f169eb00-22a9-11eb-8a5f-bfb71caa7d0c.png)
+
+    Select the first one if you are not sure about the plugins you want to install and if you want to setup jenkins with default list of plugin. Select second option if you want to select the plugin and if you are sure about to install the plugins. Here in this example choosing first one.
+
+![image](https://user-images.githubusercontent.com/24622526/98562244-1fe7c600-22aa-11eb-8643-05e6097b1bbd.png)
+
 
 
