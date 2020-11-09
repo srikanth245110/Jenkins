@@ -6,7 +6,7 @@
 	container (k8s) - pending
 	war deployment to tomcat
 	run as service (on Linux/Unix or windows) - https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
-	
+		/var/lib/jenkins >> Jenkins Home
 		sudo cat /var/lib/jenkins/secrets/initialAdminPassword >> initial admin password for the user admin
 		/etc/init.d/jenkins  >> Setup Jenkins as a daemon launched on start
 		/var/log/jenkins/jenkins.log >> console log output to the file
