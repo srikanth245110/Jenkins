@@ -23,6 +23,7 @@ configure a cloud(docker) to create an agent - https://devopscube.com/docker-con
             Docker Host URI "tcp://{privateIP}:4243"
             Enabled
             Expose DOCKER_HOST
+	    Click on Test Connection
           -> Enter "Docker Agent templates"
             Labels = "anyName"
             Enabled
@@ -43,4 +44,5 @@ configure a cloud(docker) to create an agent - https://devopscube.com/docker-con
 
 ![image](https://user-images.githubusercontent.com/24622526/98500706-75da5080-224d-11eb-9dfb-1826db353b92.png)
 
-![image](https://user-images.githubusercontent.com/24622526/98500768-9acec380-224d-11eb-8561-7471fcfe34c4.png
+![image](https://user-images.githubusercontent.com/24622526/98500768-9acec380-224d-11eb-8561-7471fcfe34c4.png)
+
