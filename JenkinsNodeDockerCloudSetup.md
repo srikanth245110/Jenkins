@@ -72,6 +72,16 @@ Step-2: In the Job configuration >> Select the checkbox "Restrict where this pro
 
 Step-3: Sample commands/script under Build >> Execute Shell
 
+	echo "I am inside the container"
+
+	echo "=====================Printing Maven version====================="
+
+	mvn -v
+
+	echo "=====================Printing Git version====================="
+
+	git --version
+
 ![image](https://user-images.githubusercontent.com/24622526/98569261-62ad9c00-22b2-11eb-868a-bd5079444255.png)
 
 ![image](https://user-images.githubusercontent.com/24622526/98569636-d485e580-22b2-11eb-8635-8a2c8f42914d.png)
