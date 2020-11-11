@@ -25,19 +25,19 @@
         Restart Jenkins: sudo systemctl restart jenkins
         Start the Jenkins: sudo systemctl start jenkins
         Stop the Jenkins: sudo systemctl stop jenkins
-        Uninstall Jenkins: sudo apt-get remove --auto-remove jenkins -y
-        Uninstall Jenkins with dependencies: sudo apt-get remove --auto-remove jenkins -y
-        delete your local/config files for jenkins: sudo apt-get purge jenkins -y (Or) sudo apt-get purge --auto-remove jenkins -y
+        Uninstall Jenkins: sudo yum remove --auto-remove jenkins -y
+        Uninstall Jenkins with dependencies: sudo yum remove --auto-remove jenkins -y
+        delete your local/config files for jenkins: sudo yum purge jenkins -y (Or) sudo yum purge --auto-remove jenkins -y
 
     Important paths:
         JENKINS_HOME = /var/lib/jenkins
         initial admin password file for the user admin: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
         Setup Jenkins as a daemon launched on start: /etc/init.d/jenkins
         console log output to the file: /var/log/jenkins/jenkins.log
-        To change the default port number, Jenkins default path: /etc/default/jenkins
-        Jenkins user and group: jenkins (see the details in  /etc/default/jenkins)
-        location of the jenkins war file: /usr/share/jenkins/jenkins.war
-        PIDFILE=/var/run/jenkins/jenkins.pid
+        To change the default port number, Jenkins default path: /etc/sysconfig/jenkins
+        Jenkins user and group: jenkins (see the details in  /etc/sysconfig/jenkins)
+        location of the jenkins war file: /usr/lib/jenkins/jenkins.war
+        PIDFILE=/var/run/jenkins.pid (or run the command to now the Jenkins pid - ps -ef| grep jenkins)
         If jenkins loaded successfully it will generate: /etc/rc.d/init.d/jenkins
         
  
