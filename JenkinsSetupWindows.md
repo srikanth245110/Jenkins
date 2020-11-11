@@ -50,3 +50,9 @@
 
 ![image](https://user-images.githubusercontent.com/24622526/98761524-e57b4780-23d5-11eb-9c15-484077dbda2d.png)
 
+
+**Setup Jenkins**
+
+Launch the URL in any browser: http://{public-ip-address}:8080
+
+From here, follow the same steps from the section "Setup Jenkins":  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
