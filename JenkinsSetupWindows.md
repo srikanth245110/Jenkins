@@ -9,6 +9,17 @@
     choco install jdk8 -Y
     
     Either you can install Jenkins using this command "choco install jenkins -Y" or follow the below steps.
+    
+    Important paths(after installation):
+    JENKINS_HOME = /var/lib/jenkins
+    initial admin password file for the user admin: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    Setup Jenkins as a daemon launched on start: /etc/init.d/jenkins
+    console log output to the file: /var/log/jenkins/jenkins.log
+    To change the default port number, Jenkins default path: /etc/sysconfig/jenkins
+    Jenkins user and group: jenkins (see the details in  /etc/sysconfig/jenkins)
+    location of the jenkins war file: /usr/lib/jenkins/jenkins.war
+    PIDFILE=/var/run/jenkins.pid (or run the command to now the Jenkins pid - ps -ef| grep jenkins)
+    If jenkins loaded successfully it will generate: /etc/rc.d/init.d/jenkins
 
 **Download and Install Jenkins**
     
@@ -56,3 +67,5 @@
 Launch the URL in any browser: http://{public-ip-address}:8080
 
 From here, follow the same steps from the section "Setup Jenkins":  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
+
+![image](https://user-images.githubusercontent.com/24622526/98761868-a4cffe00-23d6-11eb-8637-8323403e6056.png)
