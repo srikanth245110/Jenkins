@@ -52,7 +52,7 @@
     
 **Setup Jenkins**
 
-Launch the URL in any browser: http://<public-ip-address>:8080
+Launch the URL in any browser: http://{public-ip-address}:8080
     
 ![image](https://user-images.githubusercontent.com/24622526/98561852-a5b74180-22a9-11eb-9319-5b9f59639077.png)
 
