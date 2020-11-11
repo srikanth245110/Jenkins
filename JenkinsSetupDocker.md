@@ -1,4 +1,4 @@
-*JenkinsSetup*: https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+*JenkinsSetup*: https://www.jenkins.io/doc/book/installing/docker/
 
 ~**Install Java**~ **Install Docker**:
 
