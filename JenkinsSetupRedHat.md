@@ -43,6 +43,6 @@
  
 **Setup Jenkins**
 
-Launch the URL in any browser: http://<public-ip-address>:8080
+Launch the URL in any browser: http://{public-ip-address}:8080
     
     From here, follow the same steps from the section "Setup Jenkins":  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
