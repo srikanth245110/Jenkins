@@ -11,15 +11,14 @@
     Either you can install Jenkins using this command "choco install jenkins -Y" or follow the below steps.
     
     Important paths(after installation):
-    JENKINS_HOME = /var/lib/jenkins
-    initial admin password file for the user admin: sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-    Setup Jenkins as a daemon launched on start: /etc/init.d/jenkins
-    console log output to the file: /var/log/jenkins/jenkins.log
+    JENKINS_HOME = C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins
+    initial admin password file for the user admin: sudo cat C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets\initialAdminPassword
+    
+    console log output to the file: C:\Program Files\Jenkins/jenkins.log
     To change the default port number, Jenkins default path: /etc/sysconfig/jenkins
-    Jenkins user and group: jenkins (see the details in  /etc/sysconfig/jenkins)
-    location of the jenkins war file: /usr/lib/jenkins/jenkins.war
-    PIDFILE=/var/run/jenkins.pid (or run the command to now the Jenkins pid - ps -ef| grep jenkins)
-    If jenkins loaded successfully it will generate: /etc/rc.d/init.d/jenkins
+    Jenkins user: jenkins (see the details in C:\Program Files\Jenkins)
+    location of the jenkins war file: C:\Program Files\Jenkins\Jenkins.war
+
 
 **Download and Install Jenkins**
     
