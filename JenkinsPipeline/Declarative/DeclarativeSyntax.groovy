@@ -28,25 +28,29 @@ pipeline {
 			input{ 
 			parameters { }
 			}
+			checkout scm
 			steps{ 
+				sh('')
 				sh '----'
+				sh "----"
 				sh'''
-					----
+				    ----
 				'''
 				sh"""
-					=====
+				    =====
 				"""
 				def output=sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
 				script{ }
 		    	}
 			//https://www.jenkins.io/doc/pipeline/steps/email-ext/
-			emailext body:'--' subject:'--' from:'--' to:'--'
+			emailext body:'--' subject:'--' from:'--' to:'--' from:'--'
+			email body:'--' subject:'--' from:'--' to:'--' from:'--'
 			publishHTML 
 	}
 	stage('Test'){
 	    steps {
 		sh '-----'
-				bat '----'
+		bat '----'
 		junit 'reports/**/*.xml' 
 	    }
 	}
