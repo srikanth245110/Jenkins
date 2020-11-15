@@ -16,6 +16,11 @@ pipeline {
 	
 	tools{
 	}
+	
+	properties()
+	deleteDir()
+	checkout scm
+	
 
 	stages {
 		stage('Build') {
@@ -26,10 +31,16 @@ pipeline {
 			agent { }
 			input{ }
 			input{ 
-			parameters { }
+				parameters { }
 			}
-			checkout scm
+			
 			steps{ 
+				milestone()
+				timeout(10)
+				dir()
+				deleteDir()
+				checkout scm
+				println "--"
 				sh('')
 				sh '----'
 				sh "----"
