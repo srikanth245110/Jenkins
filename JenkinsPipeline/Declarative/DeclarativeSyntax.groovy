@@ -26,10 +26,10 @@ pipeline {
 			agent { }
 			input{ }
 			input{ 
-				parameters { }
+			parameters { }
 			}
-	    steps{ 
-		sh '----'
+			steps{ 
+				sh '----'
 				sh'''
 					----
 				'''
@@ -38,7 +38,10 @@ pipeline {
 				"""
 				def output=sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
 				script{ }
-	    }
+		    	}
+			//https://www.jenkins.io/doc/pipeline/steps/email-ext/
+			emailext body:'--' subject:'--' from:'--' to:'--'
+			publishHTML 
 	}
 	stage('Test'){
 	    steps {
