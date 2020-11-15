@@ -36,8 +36,8 @@ pipeline {
 			
 			steps{ 
 				milestone()
-				timeout(10)
-				dir()
+				timeout(10) { }
+				dir() { }
 				deleteDir()
 				checkout scm
 				println "--"
@@ -52,6 +52,7 @@ pipeline {
 				"""
 				def output=sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
 				script{ }
+				withCredentials(){ }
 		    	}
 			//https://www.jenkins.io/doc/pipeline/steps/email-ext/
 			emailext body:'--' subject:'--' from:'--' to:'--' from:'--'
