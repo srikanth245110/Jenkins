@@ -15,12 +15,7 @@ pipeline {
 	}
 	
 	tools{
-	}
-	
-	properties()
-	deleteDir()
-	checkout scm
-	
+	}	
 
 	stages {
 		stage('Build') {
