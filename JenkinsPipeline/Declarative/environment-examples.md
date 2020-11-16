@@ -97,3 +97,18 @@
             }
         }
     }
+--------------------------------
+
+    pipeline {
+        agent any 
+        environment {
+            MY_CREDS = credentials("v2devopsonline")
+        }
+        stages {
+            stage('Example') {
+                steps {
+                    sh 'echo username: ${MY_CREDS_USR} and pwd: ${MY_CREDS_PSW}'
+                }
+            }
+        }
+    }
