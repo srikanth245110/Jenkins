@@ -108,6 +108,44 @@
             stage('Example') {
                 steps {
                     sh 'echo username: ${MY_CREDS_USR} and pwd: ${MY_CREDS_PSW}'
+                    
+                    //sh 'curl -u ${MY_CREDS_USR}:${MY_CREDS_PSW} http://www.something.com'
+                }
+            }
+        }
+    }
+----------------------------------
+
+    pipeline {
+        agent {
+            // Define agent details here
+        }
+        environment {
+            // The MY_KUBECONFIG environment variable will be assigned
+            // the value of a temporary file.  For example:
+            //   /home/user/.jenkins/workspace/cred_test@tmp/secretFiles/546a5cf3-9b56-4165-a0fd-19e2afe6b31f/kubeconfig.txt
+            MY_KUBECONFIG = credentials('my-kubeconfig')
+        }
+        stages {
+            stage('Example stage 1') {
+                steps {
+                    sh("kubectl --kubeconfig $MY_KUBECONFIG get pods")
+                }
+            }
+        }
+    }
+ -----------------------------
+ 
+     pipeline {
+        agent any
+        environment {
+            EXAMPLE_CREDS = credentials('example-credentials-id')
+        }
+        stages {
+            stage('Example') {
+                steps {
+                    /* CORRECT */
+                    sh('curl -u $EXAMPLE_CREDS_USR:$EXAMPLE_CREDS_PSW https://example.com/')
                 }
             }
         }
