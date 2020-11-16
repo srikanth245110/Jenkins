@@ -1,6 +1,8 @@
-node{
-  stage(){
-  }
-  stage(){
-  }
-}
+**Scripted Pipeline**
+
+    node{
+        stage(){
+        }
+        stage(){
+        }
+      }
