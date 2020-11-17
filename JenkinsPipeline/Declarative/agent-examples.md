@@ -68,11 +68,12 @@
 	    }
 	  }
 	}
+	
 -------------------------
 
-def createDoc(){
-    writeFile file: 'Dockerfile', text: 'FROM ubuntu:latest'
-}
+	def createDoc(){
+	    writeFile file: 'Dockerfile', text: 'FROM ubuntu:latest'
+	}
 
 	pipeline {
 	  agent any
