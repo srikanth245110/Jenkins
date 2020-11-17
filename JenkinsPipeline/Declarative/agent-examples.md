@@ -47,6 +47,8 @@
 		}
 	}
 
+----------------------------------
+
 	pipeline {
 	  agent {
 	    dockerfile { //make sure install docker plugin and docker pipeline plugins
