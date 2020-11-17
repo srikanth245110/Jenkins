@@ -68,3 +68,44 @@
 	    }
 	  }
 	}
+-------------------------
+
+def createDoc(){
+    writeFile file: 'Dockerfile', text: 'FROM ubuntu:latest'
+}
+
+	pipeline {
+	  agent any
+	  stages {
+	    stage('create dockerfile'){
+		steps{
+		    script{
+			if(!fileExists('Dockerfile')){
+			    createDoc()
+			}
+			sh'''
+			    mkdir -p /var/lib/jenkins/workspace/pipelinejob@2
+			    cp Dockerfile /var/lib/jenkins/workspace/pipelinejob@2/
+			'''
+		    }
+		}
+	    }
+	    stage("foo") {
+		agent {
+		    dockerfile {
+		      /*
+			* The Default is "Dockerfile" but this can be changed.
+			* This will build a new container based on the contents of "Dockerfile.alternate"
+			* and run the pipline inside this container
+			*/
+		      //filename "Dockerfile.alternate"
+
+		      args "-v /tmp:/tmp -p 8000:8000"
+		    }
+		}
+	      steps {
+		sh 'echo "The answer is 42"'
+	      }
+	    }
+	  }
+	}
