@@ -1,10 +1,8 @@
-**KEYWORDS and METHODS**
+**KEYWORDS and METHODS** : https://www.jenkins.io/doc/book/pipeline/syntax/
 
     pipeline
     node
     agent
-    https://www.jenkins.io/doc/book/pipeline/syntax/
-
     options
     parameters
     environment
