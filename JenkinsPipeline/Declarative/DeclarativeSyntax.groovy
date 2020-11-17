@@ -53,6 +53,7 @@ pipeline {
 			emailext body:'--' subject:'--' from:'--' to:'--' from:'--'
 			email body:'--' subject:'--' from:'--' to:'--' from:'--'
 			publishHTML 
+			post {}
 	}
 	stage('Test'){
 	    steps {
