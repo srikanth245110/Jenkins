@@ -36,6 +36,7 @@
     stash
     unstash
     dir
+    pwd
     ansiColor
     post
     always
