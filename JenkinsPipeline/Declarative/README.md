@@ -1,7 +1,8 @@
 https://www.jenkins.io/doc/book/pipeline/syntax/
+
 https://github.com/jenkinsci/pipeline-examples/blob/master/declarative-examples/
 
-examples:
+**Preparing examples for below sections**:
 
 	agent
 
