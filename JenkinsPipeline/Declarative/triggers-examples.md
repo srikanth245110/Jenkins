@@ -1,3 +1,4 @@
+Refer: https://www.jenkins.io/doc/book/pipeline/syntax/#triggers
 
     pipeline{
         agent any
