@@ -1,4 +1,5 @@
-# Jenkins concepts
+# Jenkins concepts  
+### (not finalized yet)
 
 **Jenkins installation**: https://www.jenkins.io/doc/book/installing/ 
 
