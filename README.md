@@ -1,27 +1,59 @@
 # Jenkins concepts  
 ### (not finalized yet)
 
-**Jenkins installation**: https://www.jenkins.io/doc/book/installing/ 
+**1. Jenkins installation**: https://www.jenkins.io/doc/book/installing/ 
 
 	container (docker)
 	container (k8s) - pending to prepare doc
 	war deployment to tomcat
 	run as service (on Linux/Unix or windows) - https://www.jenkins.io/doc/book/installing/linux/#debianubuntu (Or) https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetup.md
 
-**Jenkins node setup (windows, linux)**
+**2. Jenkins node setup (windows, linux)**
 
 	Create an agent (manual)
 	configure a cloud(docker) to create an agent - https://devopscube.com/docker-containers-as-build-slaves-jenkins/
 		Setup: https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetup/JenkinsNodeDockerCloudSetup.md
 	configure a cloud(kubernetes) to create an agent
 
-**Manage Jenkins**:
+**3. Manage Jenkins**:
+
+  *3.1. System Configuration*:
+
+   *3.1.1. Configure System*
+   *3.1.2. Global Tool configuration*
+   *3.1.3. Manage Plugins*
+   *3.1.4. Manage Nodes and Clouds*
+
+   
+   *3.2. Security*
+   
+   *3.2.1. Configure Global Security*
+   *3.2.2. Manage Credentials*
+   *3.2.3. Configure Credential Providers*
+   *3.2.4. Manage Users*
+   
+   *3.3. Status Information*
+   
+   *3.3.1. Status Information*
+   *3.3.1. Status Log*
+   *3.3.1. Status Statistics*
+   *3.3.1. About Jenkins*
+   
+   *3.4. Troubleshooting*
+   
+   *3.4.1. Manage Old Data*
+   
+   *3.5. Tools and Actions*
+   
+   *3.5.1. Reload Configuration from Disk*
+   *3.5.1. Jenkins CLI*
+   *3.5.1. Script Console*
+   *3.5.1. Prepare for Shutdown*
+   
 	
-	System Configuration
-	Global Tools configuration
 	
 	
-**Job Configuration**: Important features of Jenkins job configuration
+**4. Job Configuration**: Important features of Jenkins job configuration
 	
 	General Section:
 
