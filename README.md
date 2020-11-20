@@ -12,7 +12,7 @@
 
 	Create an agent (manual)
 	configure a cloud(docker) to create an agent - https://devopscube.com/docker-containers-as-build-slaves-jenkins/
-		Setup: https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsNodeDockerCloudSetup.md
+		Setup: https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetup/JenkinsNodeDockerCloudSetup.md
 	configure a cloud(kubernetes) to create an agent
 
 **Manage Jenkins**:
