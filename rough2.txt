@@ -1,0 +1,706 @@
+Jenkins concepts:
+
+	Jenkins installation: https://www.jenkins.io/doc/book/installing/
+			container (docker)
+			container (k8s) - pending
+			war deployment to tomcat
+			run as service (on Linux/Unix or windows) - https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+			
+	Jenkins node setup (windows, linux)
+			Create an agent (manual)
+				ID- jenkins-slave
+				Description - jenkins-slave SSH Key
+				Username - jenkins-slave
+				Private Key - private key of the node machine
+			configure a cloud(docker) to create an agent - https://devopscube.com/docker-containers-as-build-slaves-jenkins/
+			configure a cloud(kubernetes) to create an agent
+		
+	Manage Jenkins:
+			
+<header id="banner" class="body" color="red">
+  <h4 style="color:green;">
+    The purpose of this Jenkins job is to list the jenkins nodes and print the space on the path /var/lib/jenkins and send email to the team if used space is more than equal to 80%
+
+  </h4>
+</header>
+<header id="banner" class="body" color="green">
+  <h3>Find more details about this job in the <a href=https://confluence>confluence page</a> </h3>
+</header>
+
+	
+https://github.com/DevOpsPlatform
+
+https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse
+
+
+
+docker build -t mavengit:1.0 -f ./Dockerfile .
+
+sudo docker login
+	venkatasykam
+	
+
+docker tag mavengit:1.0 venkatasykam/mavengit:1.0
+
+docker push venkatasykam/mavengit:1.0
+	
+	
+Jenkins useful plugins:
+	
+	unix:///var/run/docker.sock
+	
+	sudo apt update
+	#sudo apt search openjdk
+	sudo apt install openjdk-8-jdk -Y
+	java -version
+
+	
+	https://www.qaautomation.co.in/2019/06/sending-sms-call-notification-jenkins-build-failure.html
+	
+	
+	
+sudo apt-get update
+
+sudo apt-get install docker.io -y
+
+sudo docker version
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+ 
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+minikube version
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+kubectl version --client
+
+========================================
+
+Concepts and examples: https://www.jenkins.io/doc/pipeline/examples/
+
+jenkins lockable resources - lock(...)
+
+gitlabCommitStatus(..)
+
+milestone()
+
+abortPreviousBuilds(..)
+
+timeout(time: 2, unit: 'DAYS') { .. }
+
+input
+
+variable definition
+
+menthod definition and calling
+
+String methods
+
+waitUntil(){ } // // wait until we reach deployment time
+
+if else blocks
+
+try catch finally blocks
+
+call(body) { }
+
+config.get()
+
+assert
+
+config.rootDir
+
+def buildPropertiesFile = config.rootDir ? config.rootDir + "/" + "gradleBuild.properties" : "gradleBuild.properties"
+assetProperties = readProperties(file: buildPropertiesFile)
+version = assetProperties['assetVersion']
+println "Gradle project version: ${version}"
+
+def server = Artifactory.newServer url: artifactoryURL, credentialsId: 'artifactory'
+deployInfo = Artifactory.newBuildInfo()
+deployInfo.env.capture = true
+deployInfo.setNumber 'DEPLOY_' + "${deployEnv}" + '_' + "${deploymentName}" + '_' + "${version}" + '_' + "${deploymentStatus}"
+server.publishBuildInfo deployInfo
+
+wrap([$class: 'BuildUser']) {
+	buildUserId = env.BUILD_USER_ID
+	println("Started by manual build (user from Jenkins): "+buildUserId)
+}
+
+deploymentResult = sh returnStatus: true, script: "ssh jenkins@${targetServer} /usr/bin/sudo -u was /opt/was/bin/was_ap_deploy ${deploymentName} ${version} -u $user -ds artifactory"
+
+ServiceUrl = env.TEST_URL_SERVICE //defined in configure syster
+
+def result = sh returnStatus: true, script: "wget -q ${downloadUrl}"
+	if (result != 0) {
+        error "Could not download ${downloadUrl} from artifactory."
+    }
+	
+	
+sh returnStdout: true, script: "curl -XGET --header 'Private-Token: $TOKEN' 'https://gitlab.com/api/v4/search?scope=users&search=$fname' > userdetals/users.json"
+def props = readJSON file: 'userdetals/users.json'
+    props.each { key, value ->
+        //println "key: "+key
+        //println "value: "+value
+	}
+	
+
+def rtGradle = Artifactory.newGradleBuild()
+rtGradle.tool = 'GRADLE'
+rtGradle.deployer repo: 'some-libs-release-local', server: server
+// set options of deployer
+rtGradle.deployer.deployMavenDescriptors = true
+rtGradle.deployer.mavenCompatible = true
+rtGradle.deployer.deployArtifacts = true
+rtGradle.deployer.deployIvyDescriptors = false
+rtGradle.deployer.artifactDeploymentPatterns.addExclude("*.jar")
+
+// add all properties from gradleBuild.properties to Artifactory
+for (def entry in assetProperties) {
+	rtGradle.deployer.addProperty(entry.key, entry.value)
+	println "Adding property " + entry.key + " : " + entry.value
+}
+
+// run gradle
+println "Running artifactory gradle build."
+buildInfo = rtGradle.run buildFile: 'build.gradle', tasks: tasks, rootDir: config.rootDir, switches: switches, buildInfo: buildInfo
+
+/**
+ * 	Check if build was triggered by a MERGE REQUEST
+ */
+def isMergeRequest() {
+    return "MERGE" == env.gitlabActionType
+}
+
+outputList = sh  returnStdout: true, script: "curl -u $USERNAME:$PASSWORD -X GET 'Http://www.values.com/valueslist.txt' --silent --show-error"
+String searVal ='Venkat'
+if(searVal in outputList.split("\n")){
+	println "Yes, value exists"
+}
+
+def deployedDate = Date.parse('E MMM dd HH:mm:ss z yyyy', date.toString()).format('yyyy.MM.dd.HH.mm.ss')
+
+fileExists("/path/file.txt")
+
+def emailSubject = "${env.JOB_BASE_NAME} - ${env.BUILD_NUMBER} - ${stageName} failed"
+def emailBody = "Build ${env.BUILD_NUMBER} failed at stage '${stageName}'.\nPlease fix the build as soon as possible.\n\nBuild log : ${env.BUILD_URL}console "
+emailext body: emailBody, recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: emailSubject
+
+/**
+ * Extract gitlab build trigger secret token from job
+ */
+def getGitLabTriggerSecretToken() {
+    try {
+        def target = Hudson.instance
+        env.JOB_NAME.split('/').each {
+            target = target.getItem(it)
+        }
+        def pipelineTriggerJobProperty = target.getAllProperties().find { it instanceof PipelineTriggersJobProperty }
+        def gitlabPushTrigger = pipelineTriggerJobProperty.getTriggers().find { it instanceof GitLabPushTrigger }
+        return gitlabPushTrigger.secretToken
+    } catch (err) {
+        println "[Error] An error occurred while trying to lookup trigger: " + err
+    }
+    return null
+}
+
+
+-------------------------------------------------------
+abortPreviousBuilds(stage: "Approve Deploy")
+-------------------------------------------------------
+timeout(time: 2, unit: 'DAYS') {
+	input message: 'Deploy this build to SYST?'
+	milestone()
+}
+-------------------------------------------------------
+sshagent(['CREDENTIALS_ID']) {
+    sh 'scp tlt/target/tlt.war root@some-remote-host:/LOCATION/TOMCAT/webapps/'
+}
+-------------------------------------------------------
+try {
+	----
+	----
+} catch (err) {
+	println err
+	throw err
+}
+------------------------------------------------------
+node {
+    try {
+        // do something that fails
+        sh "exit 1"
+        currentBuild.result = 'SUCCESS'
+    } catch (Exception err) {
+        currentBuild.result = 'FAILURE'
+    }
+    echo "RESULT: ${currentBuild.result}"
+}
+------------------------------------------------------
+// This shows a simple build wrapper example, using the AnsiColor plugin.
+node {
+    // This displays colors using the 'xterm' ansi color map.
+    ansiColor('xterm') {
+        // Just some echoes to show the ANSI color.
+        stage "\u001B[31mI'm Red\u001B[0m Now not"
+-------------------------------------------------------
+
+// This shows a simple example of how to archive the build output artifacts.
+node('master') {
+    stage("Create build output"){
+    
+        // Make the output directory.
+        sh "mkdir -p output"
+    
+        // Write an useful file, which is needed to be archived.
+        writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
+    
+        // Write an useless file, which is not needed to be archived.
+        writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
+    }
+    
+    stage("Archive build output"){
+        // Archive the build output artifacts.
+        archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+    }
+}
+---------------------------------------------------------
+use this in finally block
+// perform workspace cleanup only if the build have passed
+// if the build has failed, the workspace will be kept
+cleanWs cleanWhenFailure: false
+----------------------------------------------------------
+// Get all Causes for the current build
+def causes = currentBuild.getBuildCauses()
+println "causes: "+causes
+
+// Get a specific Cause type (in this case the user who kicked off the build),
+// if present.
+def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+println "specificCause: "+specificCause
+----------------------------------------------------------
+git url: https://github.com/venkatasykam/DevOpsWebApp.git
+
+shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+
+println "shortCommit: "+shortCommit
+
+commitChangeset = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
+
+println "commitChangeset: "+commitChangeset
+----------------------------------------------------------
+build job: 'freestyle', parameters: [
+string(name: 'param1', value:'test_param'),
+string(name:'dummy', value: "${var}")]
+----------------------------------------------------------
+// Advice: don't define M2_HOME in general. Maven will autodetect its root fine.
+withEnv(["JAVA_HOME=${ tool 'jdk-1.8.0_64bits' }", "PATH+MAVEN=${tool 'maven-3.2.1'}/bin:${env.JAVA_HOME}/bin"]) {
+
+    // Apache Maven related side notes:
+    // --batch-mode : recommended in CI to inform maven to not run in interactive mode (less logs)
+    // -V : strongly recommended in CI, will display the JDK and Maven versions in use.
+    //      Very useful to be quickly sure the selected versions were the ones you think.
+    // -U : force maven to update snapshots each time (default : once an hour, makes no sense in CI).
+    // -Dsurefire.useFile=false : useful in CI. Displays test errors in the logs directly (instead of
+    //                            having to crawl the workspace files to see the cause).
+    sh "mvn --batch-mode -V -U -e clean deploy -Dsurefire.useFile=false"
+
+}
+----------------------------------------------------------
+withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+    sh("git tag -a some_tag -m 'Jenkins'")
+    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> --tags')
+}
+----------------------------------------------------------
+// For SSH private key authentication, try the sshagent step from the SSH Agent plugin.
+sshagent (credentials: ['git-ssh-credentials-ID']) {
+    sh("git tag -a some_tag -m 'Jenkins'")
+    sh('git push <REPO> --tags')
+}
+----------------------------------------------------------
+// This shows a simple build wrapper example, using the Timestamper plugin.
+node {
+    // Adds timestamps to the output logged by steps inside the wrapper.
+    timestamps {
+        // Just some echoes to show the timestamps.
+        stage "First echo"
+        echo "Hey, look, I'm echoing with a timestamp!"
+
+        // A sleep to make sure we actually get a real difference!
+        stage "Sleeping"
+        sleep 30
+
+        // And a final echo to show the time when we wrap up.
+        stage "Second echo"
+        echo "Wonder what time it is now?"
+    }
+}
+
+----------------------------------------------------------
+pipeline {
+    agent any
+    environment { 
+        CC = 'clang'
+    }
+    stages {
+        stage('Example') {
+            environment { 
+                AN_ACCESS_KEY = credentials('my-predefined-secret-text') 
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
+    }
+}
+----------------------------------------------------------
+stage('Example Username/Password') {
+	environment {
+		SERVICE_CREDS = credentials('my-predefined-username-password')
+	}
+	steps {
+		sh 'echo "Service user is $SERVICE_CREDS_USR"'
+		sh 'echo "Service password is $SERVICE_CREDS_PSW"'
+		sh 'curl -u $SERVICE_CREDS https://myservice.example.com'
+	}
+}
+----------------------------------------------------------
+stage('Example SSH Username with private key') {
+	environment {
+		SSH_CREDS = credentials('my-predefined-ssh-creds')
+	}
+	steps {
+		sh 'echo "SSH private key is located at $SSH_CREDS"'
+		sh 'echo "SSH user is $SSH_CREDS_USR"'
+		sh 'echo "SSH passphrase is $SSH_CREDS_PSW"'
+	}
+}
+----------------------------------------------------------
+    options {
+        timeout(time: 1, unit: 'HOURS') 
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+----------------------------------------------------------
+options { timestamps() }
+----------------------------------------------------------
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+    }
+}
+----------------------------------------------------------
+pipeline {
+    agent any
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                expression { BRANCH_NAME ==~ /(production|staging)/ }
+                anyOf {
+                    environment name: 'DEPLOY_TO', value: 'production'
+                    environment name: 'DEPLOY_TO', value: 'staging'
+                }
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
+----------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            agent {
+                label "some-label"
+            }
+            when {
+                beforeAgent true
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
+----------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                beforeInput true
+                branch 'production'
+            }
+            input {
+                message "Deploy to production?"
+                id "simple-input"
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
+---------------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                beforeOptions true
+                branch 'testing'
+            }
+            options {
+                lock label: 'testing-deploy-envs', quantity: 1, variable: 'deployEnv'
+            }
+            steps {
+                echo "Deploying to ${deployEnv}"
+            }
+        }
+    }
+}
+---------------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                triggeredBy "TimerTrigger"
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
+---------------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Non-Sequential Stage') {
+            agent {
+                label 'for-non-sequential'
+            }
+            steps {
+                echo "On Non-Sequential Stage"
+            }
+        }
+        stage('Sequential') {
+            agent {
+                label 'for-sequential'
+            }
+            environment {
+                FOR_SEQUENTIAL = "some-value"
+            }
+			stages{
+			    stage('inside stage'){
+    				steps {
+    					echo "In Sequential 1"
+    				}
+			    }
+			}
+		}
+	}
+}
+---------------------------------------------------------------
+pipeline {
+    parameters {
+        choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
+    }
+    agent none
+    stages {
+        stage('BuildAndTest') {
+            matrix {
+                agent {
+                    label "${PLATFORM}-agent"
+                }
+                when { anyOf {
+                    expression { params.PLATFORM_FILTER == 'all' }
+                    expression { params.PLATFORM_FILTER == env.PLATFORM }
+                } }
+                axes {
+                    axis {
+                        name 'PLATFORM'
+                        values 'linux', 'windows', 'mac'
+                    }
+                    axis {
+                        name 'BROWSER'
+                        values 'firefox', 'chrome', 'safari', 'edge'
+                    }
+                }
+                excludes {
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            values 'linux'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'safari'
+                        }
+                    }
+                    exclude {
+                        axis {
+                            name 'PLATFORM'
+                            notValues 'windows'
+                        }
+                        axis {
+                            name 'BROWSER'
+                            values 'edge'
+                        }
+                    }
+                }
+                stages {
+                    stage('Build') {
+                        steps {
+                            echo "Do Build for ${PLATFORM} - ${BROWSER}"
+                        }
+                    }
+                    stage('Test') {
+                        steps {
+                            echo "Do Test for ${PLATFORM} - ${BROWSER}"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+pipeline {
+    agent none
+    stages {
+        stage('Non-Sequential Stage') {
+            agent {
+                label 'for-non-sequential'
+            }
+            steps {
+                echo "On Non-Sequential Stage"
+            }
+        }
+        stage('Sequential') {
+            agent {
+                label 'for-sequential'
+            }
+            environment {
+                FOR_SEQUENTIAL = "some-value"
+            }
+            stages {
+                stage('In Sequential 1') {
+                    steps {
+                        echo "In Sequential 1"
+                    }
+                }
+                stage('In Sequential 2') {
+                    steps {
+                        echo "In Sequential 2"
+                    }
+                }
+                stage('Parallel In Sequential') {
+                    parallel {
+                        stage('In Parallel 1') {
+                            steps {
+                                echo "In Parallel 1"
+                            }
+                        }
+                        stage('In Parallel 2') {
+                            steps {
+                                echo "In Parallel 2"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+---------------------------------------------------------------
+parallel {
+	stage('In Parallel 1') {
+		steps {
+			echo "In Parallel 1"
+		}
+	}
+	stage('In Parallel 2') {
+		steps {
+			echo "In Parallel 2"
+		}
+	}
+}
+---------------------------------------------------------------
+pipeline {
+  agent any
+  parameters {
+    string(name: 'STATEMENT', defaultValue: 'hiiiiiiiiiiiiiiiiiiiiiiii', description: 'What should I say?')
+  }
+  stages {
+    stage('Example') {
+      steps {
+        /* CORRECT */
+        sh('echo ${STATEMENT}')
+        sh '''
+            echo ${STATEMENT}
+        '''
+        sh"""
+            echo ${STATEMENT}
+        """
+      }
+    }
+  }
+}
+---------------------------------------------------------------
+if(true){
+	error("Build Failed due to security vulnerabilities of dependencies during Sonar Scan")
+}
+---------------------------------------------------------------
+https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/
