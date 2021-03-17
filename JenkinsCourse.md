@@ -1,5 +1,24 @@
 *Jenkins concepts*:
 
+	Jenkins installation
+	Jenkins Node setup
+	Manage Jenkins
+	Job setup (freestyle)
+	Job setup (pipeline)
+	Job setup (maven)
+	Job setup (multi branch pipeline)
+	Folder setup
+	Filters
+	Jenkins Views
+	BlueOcean jobs setup
+	Jenkins Pipeline Script(scripted, declarative, shared)
+	Jenkins update/upgrade
+	Plugins upgrade/update
+	Jenkins backup
+	Jenkins integrations with other tools
+	
+
+
 **Jenkins installation**: https://www.jenkins.io/doc/book/installing/ 
 
 	container (docker)
