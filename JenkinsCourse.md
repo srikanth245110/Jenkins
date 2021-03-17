@@ -16,13 +16,38 @@
 
 **Manage Jenkins**:
 	
-	System Configuration
+	Configure System
+		Home directory
+		System Message
+		Local Maven Repository
+		# of executors
+		Labels
+		Usage
+		Default view
+		Restrict project naming
+		Jenkins URL
+		System Admin e-mail address
+		Environment variables
+		SonarQube servers
+		GitLab connections
+		Rebuild Configuration(Remember Password Enabled)
+		Timestamper
+		Lockable Resources Manager
+		Global Pipeline Libraries(shared libs)
+		Artifactory servers
+		Extended E-mail Notification(SMTP server)
+		E-mail Notification (SMTP server)
+		Gitlab Merge Request Builder
+	Configure Global Security
 	Global Tools configuration
 	Manage Nodes
 	Manage Credentials
 	Manage Plugins
 	Script Console
 	System Information
+	System Log
+	Jenkins CLI
+	About Jenkins
 	
 **Job Configuration**: Important features of Jenkins job configuration
 	
@@ -123,3 +148,5 @@
 		* Ansible
 		* Artifactory
 		* Nexus
+	* Build History
+	* Job Config History
