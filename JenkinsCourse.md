@@ -18,7 +18,11 @@
 	
 	System Configuration
 	Global Tools configuration
-	
+	Manage Nodes
+	Manage Credentials
+	Manage Plugins
+	Script Console
+	System Information
 	
 **Job Configuration**: Important features of Jenkins job configuration
 	
@@ -99,3 +103,23 @@
                     2.40. Public Junit test result report. (free style).
                     2.41. Trigger Parameterized builds on other projects.
                     2.42. SonarQube analysis with Maven.
+
+**Other Topics**: 
+	
+	* Jenkins pipeline script
+		* Scripted pipeline script
+		* Declarative pipeline script
+		* Shared libraries
+	* Integrations:
+		* Jenkins with JIRA integration
+		* Selenium
+		* Sonar
+		* Git
+		* Maven
+		* Gradle
+		* Ant
+		* Docker
+		* Kubernetes
+		* Ansible
+		* Artifactory
+		* Nexus
