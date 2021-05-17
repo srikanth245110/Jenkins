@@ -5,7 +5,7 @@
       3. Setup a job in Jenkins as to: Code checkout --> Build(compile-->test-->package-->deploy to Nexus) --> deploy to tomcat. (as guided in Phase-1 docs)
       4. Schedule the job to run everyday morning 6am & evening 6pm. (Build Periodical)
       5. Schedule the job to run for every check-in. (GitHub Push)
-      6. Install the plugin "Nested view plugin" (Manage Jenkins --> Manage Plugins --> Available --> search for this and install).
+      6. Install any plugin, ex: "Nested view plugin" (Manage Jenkins --> Manage Plugins --> Available --> search for this and install).
       7. Setup a pipeline: Job1 --> Job2 --> Job3.
       
       
