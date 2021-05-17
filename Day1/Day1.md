@@ -2,7 +2,7 @@ Jenkins - Day1 - topics need to be covered
 
         1. What is Jenkins & CI-CD ?
 
-        2. Jenkins setup? & Describe the home page.
+        2. Jenkins setup ?
         
         3. Manage Jenkins --> Manage plugins. (Install 'maven integration' plugin to find the new job template).
                 3.1. Job Configuration History plugin.
