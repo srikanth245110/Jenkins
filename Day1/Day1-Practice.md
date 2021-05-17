@@ -7,7 +7,7 @@
       5. Schedule the job to run for every check-in. (GitHub Push)
       6. Install the plugin "Nested view plugin" (Manage Jenkins --> Manage Plugins --> Available --> search for this and install).
       7. Setup a pipeline: Job1 --> Job2 --> Job3.
-      8. 
+      
       
       
       
@@ -22,6 +22,6 @@
       7. Deploy the Package to Nexus.
       8. Downstream & Upstream job setup i.e., pipeline jobs setups.
       9. Installation of plugin in two ways.
-      10. 
+      
       
       
