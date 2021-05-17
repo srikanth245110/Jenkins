@@ -29,10 +29,10 @@ Jenkins - Day2 - topics need to be covered
                 What is difference between restart, safeRestart.
                 How to configure credentials?
                 How to add user?
-                How to restrict a user to only read/build/configure ect jobs?
+                How to restrict a user to only read/build/configure permissions on jobs?
                 Different types of permissions?
                 Jobs wise persmission?
-                How to setup the Java, maven, git etc paths in jenkins?
+                How to setup the Java, maven, git and other tools paths in jenkins?
                 
                 
                 
