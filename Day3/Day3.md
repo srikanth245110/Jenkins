@@ -16,7 +16,7 @@ Maven - Day3 - topics need to be covered
                         2.3. Disable this project.
                         2.4. Use custom workspace.
                         2.5. Restrict where this jib can run. (slave selection).
-                        2.6. Execute concurrent builds if necessary (JDK selection).
+                        2.6. Execute concurrent builds if necessary.
                         
                 Source Code Management:
                 
