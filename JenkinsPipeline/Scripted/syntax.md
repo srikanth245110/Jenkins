@@ -1,15 +1,11 @@
 **Scripted Pipeline**
 
-    node{
-        	
-        properties()
-        deleteDir()
-        checkout scm
-        
+    node{        
         stage(){
             
         }
             
         stage(){
+        
         }
       }
