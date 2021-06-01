@@ -6,6 +6,7 @@ pipeline {
 	
 	options {
 		skipStagesAfterUnstable()
+		disableConcurrentBuilds()
 	}
 	
 	parameters{
