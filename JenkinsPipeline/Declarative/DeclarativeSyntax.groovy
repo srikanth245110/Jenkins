@@ -47,7 +47,11 @@ pipeline {
 				    =====
 				"""
 				def output=sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-				script{ }
+				script{
+					def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
+					println "Git URL: "
+					println scmUrl
+				}
 				withCredentials(){ }
 		    	}
 			//https://www.jenkins.io/doc/pipeline/steps/email-ext/
