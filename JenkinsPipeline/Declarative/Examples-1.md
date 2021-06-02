@@ -9,11 +9,13 @@
         pipeline {
 
             agent any
-
-            stage('Stage 1') {
-                steps {
-                    // One or more steps need to be included within the steps block.
-                    println "stage-1"
-                }
-            }
+               
+            stages{
+                    stage('Stage 1') {
+                        steps {
+                            // One or more steps need to be included within the steps block.
+                            println "stage-1"
+                        }
+                    }
+             }
        }
