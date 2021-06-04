@@ -6,6 +6,50 @@
 			customWorkspace '/some/other/path'
 		}
 	} 
+	
+	--------------------------
+	
+	pipeline{
+	    agent {
+
+		label 'master'
+
+	    }
+
+	    stages{
+		stage('Build'){
+		    agent {
+
+			label 'build'
+
+		    }
+		    steps{
+			println "I am from build stage"
+
+			sh'''
+			    echo sample-build > build.txt
+		       '''
+		    }
+		}
+		stage('Deploy'){
+		    agent {
+
+			label 'deploy'
+
+		    }
+		    steps{
+			println "I am from deploy stage"
+
+			sh'''
+			    echo sample-deploy > deploy.txt
+		       '''
+		    }
+		}
+	    }
+	}
+
+	----------------------------
+	
 	or
 	agent { docker 'maven:3-alpine' } //install 2 plugins: Docker plugin and Docker Pipeline and sudo chmod 666 /var/run/docker.sock
 	or
