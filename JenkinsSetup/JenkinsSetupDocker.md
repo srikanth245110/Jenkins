@@ -4,7 +4,8 @@
 
     #Create an Ubuntue machine and connect to it.
 
-    #Update the repositories
+    #Update the repositories and install docker
+    
     sudo apt update
     
     sudo apt-get install docker.io -y
@@ -26,9 +27,11 @@
     
 **Setup Jenkins**:
 
-  Launch the URL in any browser: http://{public-ip-address}:8080
+  Access the URL in any browser: http://{public-ip-address}:8080
   
-  From here, follow the same steps from the section "Setup Jenkins":  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
+  From here, follow the steps from the section "Setup Jenkins": 
+  
+  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
 
     
     
