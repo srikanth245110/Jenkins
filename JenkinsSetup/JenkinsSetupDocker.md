@@ -16,7 +16,7 @@
     
 ~**Install Jenkins**~ **Run Jenkins container**: https://hub.docker.com/_/jenkins
 
-    sudo docker run --detach --name jenkins --network jenkins --publish 8080:8080 --publish 50000:50000 --volume jenkins-data:/var/jenkins_home jenkins
+    sudo docker run --detach --name jenkins --network jenkins --publish 8080:8080 --publish 50000:50000 --volume jenkins-data:/var/jenkins_home jenkins/jenkins:latest
     
     sudo docker ps -a
     
