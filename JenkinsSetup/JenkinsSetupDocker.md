@@ -27,12 +27,14 @@
     
 **Setup Jenkins**:
 
-  Access the URL in any browser: http://{public-ip-address}:8080
+  Access the URL in any browser: `http://{public-ip-address}:8080`
   
   From here, follow the steps from the section "Setup Jenkins": 
   
-  https://github.com/DayToDayDevOpsCourse/JenkinsDayToDayCourse/blob/master/JenkinsSetupUbuntu.md
-
+  
+  https://github.com/DevOpsOnlineTraining-2021/Jenkins/blob/master/JenkinsSetup/JenkinsSetupUbuntu.md
+  
+  
     
     
     
