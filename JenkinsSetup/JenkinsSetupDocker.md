@@ -15,15 +15,20 @@
     #find more docker commands https://github.com/DevOpsPlatform/Phase-2/blob/master/Docker/Docker-Commands.md
     
 ~**Install Jenkins**~ **Run Jenkins container**: https://hub.docker.com/_/jenkins
-
-    sudo docker run --detach --name jenkins --network jenkins --publish 8080:8080 --publish 50000:50000 --volume jenkins-data:/var/jenkins_home jenkins/jenkins:latest
+    
+    sudo docker run -d -n jenkins -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home jenkins/jenkins:latest
     
     sudo docker ps -a
     
-    Output:
-    ubuntu@ip-172-31-14-206:~$ sudo docker ps -a
-    CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                                              NAMES
-    9161c2a4c25b        jenkins             "/bin/tini -- /usr/l…"   About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   silly_kepler
+    find / -name "initialAdminPassword" (a path will be printed, copy this path)
+    
+    cat <copied path above>
+    
+    Or 
+    
+    docker exec -it jenkins cat /var/lib/jenkins/secrets/initialAdminPassword (a path will be printed, copy this path)
+    
+    cat <copied path above>
     
 **Setup Jenkins**:
 
