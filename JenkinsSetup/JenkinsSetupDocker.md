@@ -18,7 +18,7 @@
     
 ~**Install Jenkins**~ **Run Jenkins container**: https://hub.docker.com/_/jenkins
     
-    sudo docker run -d -n jenkins -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home jenkins/jenkins:latest
+    sudo docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home jenkins/jenkins:latest
     
     sudo docker ps -a
     
