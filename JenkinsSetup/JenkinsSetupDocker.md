@@ -28,7 +28,7 @@
     
     Or 
     
-    docker exec -it jenkins cat /var/lib/jenkins/secrets/initialAdminPassword (a path will be printed, copy this path)
+    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword (a path will be printed, copy this path)
     
     cat <copied path above>
     
