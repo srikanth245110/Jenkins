@@ -6,6 +6,8 @@
 
     #Update the repositories and install docker
     
+    sudo -i
+    
     sudo apt update
     
     sudo apt-get install docker.io -y
