@@ -5,10 +5,10 @@
     #Update the repositories
     sudo apt update
     
-    #search of all available packages
+    #search of all available jdk packages
     sudo apt search openjdk
     
-    #Pick one option and install it
+    #Pick one package from search result and install jdk 
     sudo apt install openjdk-8-jdk -y
     
         If you see any similar message as below follow below steps to solve the issue
