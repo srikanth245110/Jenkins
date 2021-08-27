@@ -22,16 +22,19 @@
     #check the installation
     java -version
     
-**Install Jenkins**:
+**Install Jenkins**: copy each copy command line by line and execute
 
     wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    
     sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
         /etc/apt/sources.list.d/jenkins.list'
+        
     sudo apt-get update
+    
     sudo apt-get install jenkins -y
     
     Few commands:
-        Check the status of Jenkins: sudo systemctl status jenkins
+        Check the status of Jenkins: sudo systemctl status jenkins (press q button to exist from status console)
         Restart Jenkins: sudo systemctl restart jenkins
         Start the Jenkins: sudo systemctl start jenkins
         Stop the Jenkins: sudo systemctl stop jenkins
