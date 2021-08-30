@@ -6,12 +6,11 @@
     
     java -version
     
-**Install Jenkins**:
+**Install Jenkins**: copy each command and run on the server
 
     sudo yum install wget -y
     
-    sudo wget -O /etc/yum.repos.d/jenkins.repo \
-    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
     
     sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     
