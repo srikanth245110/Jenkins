@@ -27,6 +27,21 @@ Ref: https://community.chocolatey.org/
     choco install tomcat
     
     
-#### Install the required tools in one command
+#### Install all the required tools in one command
 
     choco install googlechrome jdk8 maven -y
+
+#### Install specific version
+
+    choco install maven --version=3.8.1
+
+#### Upgrade
+
+    choco upgrade maven --version=3.8.2
+
+#### Un-install
+
+    choco uninstall maven --version=3.8.1
+    
+
+    
