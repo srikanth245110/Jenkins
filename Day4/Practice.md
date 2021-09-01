@@ -23,4 +23,23 @@
 
 
 
+* Note: To avoid any confusions you can give update the names of the servers
+
+    hostname Linux-Node-1
+    echo "Linux-Node-1" > /etc/hostname
+
+    hostname Linux-Node-2
+    echo "Linux-Node-2" > /etc/hostname
+
+    hostname Jenkins-Master
+    echo "Jenkins-Master" > /etc/hostname
+
+    exit
+    exit
+
+and connect again, see below image for clarification
+
+![image](https://user-images.githubusercontent.com/24622526/131602407-2c986226-30b1-4a1b-a472-b1935cf53d0b.png)
+
+
 
