@@ -89,32 +89,40 @@
 
 ------
 
-#### Example-4: Build on any available node (below script is compatible to windows only - but make sure java, maven, git is already installed on jenkins windows node)
+#### Example-4: Build on any available node (below script is compatible to windows only - but make sure java, maven, git is already installed on jenkins windows node). Configure git path on windows as shown below - Manage Jenkins >> Global Tool Configuration >> Add git and the path (you can ignore the red color errors)
 
-      node("maven-windows"){
 
-          stage("clone the code"){
+![image](https://user-images.githubusercontent.com/24622526/131625287-a5b6c2e3-368d-4f0c-b919-3a19d2bc3db6.png)
 
-            println "git cloning the code"
 
-            git branch: 'web', credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git'
 
-            println "git cloning completed"
+          node("maven-windows"){
 
-          }
+              stage("clone the code"){
 
-          stage("maven build"){
+                println "git cloning the code"
 
-            println "maven build"
+                //git branch: 'web', credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git'
 
-            println "build version(in pipeline script): ${params.releaseVersion}"
+                checkout([$class: 'GitSCM', branches: [[name: '*/web']], extensions: [], gitTool: 'Git_Windows', userRemoteConfigs: [[credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git']]])
 
-            bat 'java -version'
+                println "git cloning completed"
 
-            bat 'mvn clean install -DreleaseVersion=${releaseVersion}'
+              }
 
-          }
+              stage("maven build"){
 
-        }
+                println "maven build"
+
+                println "build version(in pipeline script): ${params.releaseVersion}"
+
+                bat 'java -version'
+
+                bat ' "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.8.2\\bin\\mvn" clean install -DreleaseVersion=%releaseVersion% '
+
+              }
+
+            }
+
 
 
