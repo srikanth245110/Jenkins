@@ -89,7 +89,7 @@
 
 ------
 
-#### Example-4: Build on any available node (below script is compatible to windows only)
+#### Example-4: Build on any available node (below script is compatible to windows only - but make sure java, maven, git is already installed on jenkins windows node)
 
       node("maven-windows"){
 
