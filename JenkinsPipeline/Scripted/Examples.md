@@ -95,6 +95,12 @@
 ![image](https://user-images.githubusercontent.com/24622526/131625287-a5b6c2e3-368d-4f0c-b919-3a19d2bc3db6.png)
 
 
+Generate Pipeline script
+
+![image](https://user-images.githubusercontent.com/24622526/131627100-3deca31d-76da-45c9-8e48-66d968dfaa64.png)
+
+![image](https://user-images.githubusercontent.com/24622526/131627181-e4f1cb7d-43f5-4c9d-b464-9d33a284ae15.png)
+
 
           node("maven-windows"){
 
