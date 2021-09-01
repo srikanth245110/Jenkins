@@ -1,4 +1,20 @@
-#### Example scripted pipeline:
+
+#### Example scripted pipeline-1:
+
+
+    node("node name or lable"){
+
+      stage("checkout the code"){
+
+        println "from build stage"
+
+      }
+      
+    }
+
+------
+
+#### Example scripted pipeline-2:
 
     node("node name or lable"){
 
