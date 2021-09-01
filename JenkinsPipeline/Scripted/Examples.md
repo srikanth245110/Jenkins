@@ -131,4 +131,49 @@ Generate Pipeline script
             }
 
 
+#### Example-5: 
+
+          node("maven"){
+
+              stage("clone the code"){
+
+                println "git cloning the code"
+
+                 if (isUnix()) {
+
+                    git branch: 'web', credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git'
+
+                 }else{
+
+                    checkout([$class: 'GitSCM', branches: [[name: '*/web']], extensions: [], gitTool: 'Git_Windows', userRemoteConfigs: [[credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git']]])
+                 }
+                println "git cloning completed"
+
+              }
+
+              stage("maven build"){
+
+                println "maven build"
+
+                println "build version(in pipeline script): ${params.releaseVersion}"
+
+                if (isUnix()) {
+                    sh'''
+
+                        echo "build version(inside the sh block): ${releaseVersion}"
+
+                        "/root/apache-maven-3.8.1/bin/mvn" clean install -DreleaseVersion=${releaseVersion}
+
+                        echo "====== Maven Build Successful============="
+
+                    '''
+                }else{
+
+                    bat 'java -version'
+
+                    bat ' "C:\\ProgramData\\chocolatey\\lib\\maven\\apache-maven-3.8.2\\bin\\mvn" clean install -DreleaseVersion=%releaseVersion% '
+                }
+              }
+
+            }
 
