@@ -1,5 +1,5 @@
 
-#### Example scripted pipeline-1:
+#### Example scripted pipeline-1: Build on any available node.
 
 
     node{
@@ -14,7 +14,8 @@
 
 ------
 
-#### Example scripted pipeline-2:
+#### Example scripted pipeline-2: Build on any available node
+
 
     node("node name or lable"){
 
@@ -46,7 +47,9 @@
 
     }
 
-#### Example-3
+-----
+
+#### Example-3:  Build on any available node (but below script compatible to Linux OS).
 
         node{
 
@@ -83,3 +86,35 @@
           }
 
         }
+
+------
+
+#### Example-4: Build on any available node (below script is compatible to windows only)
+
+      node("maven-windows"){
+
+          stage("clone the code"){
+
+            println "git cloning the code"
+
+            git branch: 'web', credentialsId: 'jengitub', url: 'https://github.com/venkatasykam/DevOpsWebApp.git'
+
+            println "git cloning completed"
+
+          }
+
+          stage("maven build"){
+
+            println "maven build"
+
+            println "build version(in pipeline script): ${params.releaseVersion}"
+
+            bat 'java -version'
+
+            bat 'mvn clean install -DreleaseVersion=${releaseVersion}'
+
+          }
+
+        }
+
+
