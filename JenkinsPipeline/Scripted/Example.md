@@ -2,7 +2,7 @@
 #### Example scripted pipeline-1:
 
 
-    node("node name or lable"){
+    node{
 
       stage("checkout the code"){
 
