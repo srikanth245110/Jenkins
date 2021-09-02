@@ -5,6 +5,8 @@ Reference doc: https://www.jenkins.io/doc/pipeline/steps/credentials-binding/
 
 #### withCredentials: Bind credentials to variables
 
+**Scenario**: Print the List of git repo names under github organization "DevOpsOnlineTraining-2021" (you can give your own github org name. Find the more similar scripts in https://github.com/DevOpsOnlineTraining-2021/Linux/tree/master/Practice-3/Examples)
+
 * Step-1: Go to Jenkins >> Manage Jenkins >> Manage Credentials >> click on Jenkins >> Global credentials >> Add Credentials
 
 ![image](https://user-images.githubusercontent.com/24622526/131817002-3bf43b49-75c0-4128-a056-5c84dca24df5.png)
@@ -36,7 +38,7 @@ Reference doc: https://www.jenkins.io/doc/pipeline/steps/credentials-binding/
     }
 
 
-* Step-4: Go to pipeline job configuration and add below code and run the job (in the below script you need to update the github org name where you have admin access.
+* Step-4: Go to pipeline job configuration and add below code and run the job (in the below script you need to update the github org name where you have admin access. (Find more similar scripts in https://github.com/DevOpsOnlineTraining-2021/Linux/tree/master/Practice-3/Examples)
 
     node{
 
@@ -54,4 +56,14 @@ Reference doc: https://www.jenkins.io/doc/pipeline/steps/credentials-binding/
     
     
 ![image](https://user-images.githubusercontent.com/24622526/131820447-2343fd9d-22b2-446d-8e19-076d6b053501.png)
+
+
+Execute the job:
+
+![image](https://user-images.githubusercontent.com/24622526/131821129-d172bf1b-c249-46ca-984c-6b0a4b8f0cbe.png)
+
+
+Output:
+
+![image](https://user-images.githubusercontent.com/24622526/131821084-fc02d027-25cb-48a2-a4a4-22b894938ba7.png)
 
