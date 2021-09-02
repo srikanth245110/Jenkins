@@ -28,3 +28,30 @@ Reference doc: https://www.jenkins.io/doc/pipeline/steps/credentials-binding/
 ![image](https://user-images.githubusercontent.com/24622526/131818920-d19232dc-2f53-40f8-bf30-81aa6dd68a13.png)
 
 
+![image](https://user-images.githubusercontent.com/24622526/131819344-5e6edca7-c417-4754-aa83-8acce9770040.png)
+
+
+    withCredentials([usernamePassword(credentialsId: 'jenkinsgithub', passwordVariable: 'PASSWD', usernameVariable: 'USRNAME')]) {
+        // some block
+    }
+
+
+* Step-4: Go to pipeline job configuration and add below code and run the job (in the below script you need to update the github org name where you have admin access.
+
+    node{
+
+        stage("list repos"){
+            withCredentials([usernamePassword(credentialsId: 'jenkinsgithub', passwordVariable: 'PASSWD', usernameVariable: 'USRNAME')]) {
+
+                sh'''
+                    Org=DevOpsOnlineTraining-2021
+                    
+                    curl -# -i -u ${USRNAME}:${PASSWD} https://api.github.com/orgs/${Org}/repos?type=all | grep -w '"name":' | awk ' /'"name"'/ {print $1,$2} '
+                '''
+            }
+        }
+    }
+    
+    
+![image](https://user-images.githubusercontent.com/24622526/131820447-2343fd9d-22b2-446d-8e19-076d6b053501.png)
+
