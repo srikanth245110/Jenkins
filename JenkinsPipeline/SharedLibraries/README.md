@@ -1,4 +1,4 @@
-Step-1: Create a git repo for shared library and configure folder structure similar to this same repo - https://github.com/DIGITALAPPLICATION/JenkinsSharedLibrary
+Step-1: Create a git repo for shared library and configure folder structure similar to this same repo - [JenkinsSharedLibrary](https://github.com/DevOpsPlatform/JenkinsSharedLibrary.git)
 
 ![image](https://user-images.githubusercontent.com/24622526/131632216-5249872b-a584-419a-a9c4-4cdb2d5a0ee7.png)
 
@@ -15,7 +15,7 @@ Step-3: Configure shared library repo details as shown below - git repo url, cre
 
 ![image](https://user-images.githubusercontent.com/24622526/131631812-548db546-a069-4940-bec4-3821a862a74b.png)
 
-Step-4: Create another git repo for maven project or any and access the shared library as similar to this repo - https://github.com/DIGITALAPPLICATION/WebApp
+Step-4: Create another git repo for maven project or any other type of project and access the shared library as similar to this repo - https://github.com/MAVEN-Projects/WebApp/tree/sharedLib
 
 ![image](https://user-images.githubusercontent.com/24622526/131632562-515d86a8-a153-45fd-8f3e-1fbb607d39a3.png)
 
