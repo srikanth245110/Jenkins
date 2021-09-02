@@ -7,7 +7,26 @@
 	}
 
 
-	timeout(time: 3, unit: "SECONDS")
+	timeout(time: 3, unit: "SECONDS") // under options block
+
+------------------------
+
+	pipeline {
+	    agent any
+	    options {
+		timeout(time: 1, unit: 'MINUTES')
+	    }
+	    stages {
+		stage('Example') {
+
+		    steps {
+			echo 'Hello World'
+			
+			sleep 70
+		    }
+		}
+	    }
+	}
 
 ------------------------
 
