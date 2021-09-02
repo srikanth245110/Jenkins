@@ -73,6 +73,13 @@ Step-5: Execute job and find the maven home directory path (as we configured mav
 
 Now build again, nexus deploy will work.
 
+![image](https://user-images.githubusercontent.com/24622526/131830569-f4b0af72-6565-4fc2-8270-a015f5df89e1.png)
+
+
+As per the above image, our artifat is there in nexus repo - URL is 
+
+	http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war
+
 Step-6: Configiure Nexus credentials in Jenkins
 
 ![image](https://user-images.githubusercontent.com/24622526/131828710-d7efa2be-ff00-4e43-83dc-197228e7bf68.png)
@@ -94,3 +101,18 @@ jenkinsfile - DeployJenkinsfileWithCredentials
 ![image](https://user-images.githubusercontent.com/24622526/131829409-a60ba4bd-8f33-4923-9fac-f8ca2b082c3a.png)
 
 
+Step-8: Pipeline script withCredentials is
+
+
+	node{
+
+		stage('deploy-to-server'){
+
+			print 'download the package from nexus'
+
+			withCredentials([usernamePassword(credentialsId: 'jenkinsnexus', passwordVariable: 'nexusPassWrd', usernameVariable: 'nexusUsrName')]) {
+			    wget --user ${nexusUsrName} --password ${nexusPassWrd} http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war
+			}
+
+		}
+	}
