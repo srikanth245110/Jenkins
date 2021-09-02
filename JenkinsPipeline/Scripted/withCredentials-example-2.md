@@ -36,5 +36,38 @@ Step-3: Refer the jenkins pipeline script(*JenkinsfileWithCredentials*) from - h
         }
       }
 
-Step-4: 
+Step-4: Go to job configuration >> and configure git repo url, creds, branch, jenkinsfile name and other details(if any)
+
+![image](https://user-images.githubusercontent.com/24622526/131825948-32ee9e80-378f-48b2-bd80-9d996912e2f0.png)
+
+
+![image](https://user-images.githubusercontent.com/24622526/131826060-f378101f-ef2e-4e1a-ab34-d2d779b02238.png)
+
+
+Step-5: Execute job and find the maven home directory path (as we configured maven as to download and install automatically under Global Tools configuration)
+
+![image](https://user-images.githubusercontent.com/24622526/131827223-e5850d6c-adf4-40d7-be21-4a5e13db809d.png)
+
+
+       find / -name "maven-3.8.1"
+
+       vi /var/lib/docker/volumes/jenkins-data/_data/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.1/conf/settings.xml
+
+       Go to settings.xml file and configure nexus credentials.
+
+            ...../maven-3.8.1/conf/settings.xml
+
+            deployment user details:
+                    Username: deployment
+                    Password: deployment123
+              
+     	<server>
+		<id>deployment</id>
+		<username>deployment</username>
+		<password>deployment123</password>
+	</server>
+     
+     
+![image](https://user-images.githubusercontent.com/24622526/131828032-fd2c1340-3e8b-48d0-ad52-ad59af0608ad.png)
+
 
