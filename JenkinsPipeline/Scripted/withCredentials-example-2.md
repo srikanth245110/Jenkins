@@ -61,13 +61,36 @@ Step-5: Execute job and find the maven home directory path (as we configured mav
                     Username: deployment
                     Password: deployment123
               
-     	<server>
-		<id>deployment</id>
-		<username>deployment</username>
-		<password>deployment123</password>
-	</server>
+	      
+		<server>
+			<id>deployment</id>
+			<username>deployment</username>
+			<password>deployment123</password>
+		</server>
      
      
 ![image](https://user-images.githubusercontent.com/24622526/131828032-fd2c1340-3e8b-48d0-ad52-ad59af0608ad.png)
+
+Now build again, nexus deploy will work.
+
+Step-6: Configiure Nexus credentials in Jenkins
+
+![image](https://user-images.githubusercontent.com/24622526/131828710-d7efa2be-ff00-4e43-83dc-197228e7bf68.png)
+
+![image](https://user-images.githubusercontent.com/24622526/131828895-428ea9ba-10e8-42d9-bd97-59497d9720eb.png)
+
+
+Step-7: Create new pipleine job - deploy
+
+Configure git url - https://github.com/venkatasykam/DevOpsWebApp.git
+
+branch - web
+
+jenkinsfile - DeployJenkinsfileWithCredentials
+
+![image](https://user-images.githubusercontent.com/24622526/131829176-d4caf327-8ab2-4873-9b77-3eed2a380837.png)
+
+
+![image](https://user-images.githubusercontent.com/24622526/131829409-a60ba4bd-8f33-4923-9fac-f8ca2b082c3a.png)
 
 
