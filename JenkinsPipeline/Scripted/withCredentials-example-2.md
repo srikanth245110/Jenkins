@@ -111,8 +111,61 @@ Step-8: Pipeline script withCredentials is
 			print 'download the package from nexus'
 
 			withCredentials([usernamePassword(credentialsId: 'jenkinsnexus', passwordVariable: 'nexusPassWrd', usernameVariable: 'nexusUsrName')]) {
-			    wget --user ${nexusUsrName} --password ${nexusPassWrd} http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war
+			    sh'''
+				#(this is commented - if wget installed on your jenkins, you can use this command) wget --user ${nexusUsrName} --password ${nexusPassWrd} http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war
+
+
+				curl -u ${nexusUsrName}:${nexusPassWrd} http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war --output DevOpsWebApp-1.0.6.war 
+			    '''
 			}
 
+
+			//connect to tomcat/jboss or any appication serevr and then deploy to servers - the deployment script will have to write here
 		}
 	}
+	
+	
+Execute the job: 
+
+![image](https://user-images.githubusercontent.com/24622526/131832661-92a6ce4d-b59f-48b3-acc3-22fa02913bbb.png)
+
+
+Verify the workspace whether its downloaded or not
+
+![image](https://user-images.githubusercontent.com/24622526/131832706-b53f8c01-2f5f-44e5-9925-053c2f27c4a1.png)
+
+
+We can update the above script with parameters
+
+	/* with parameters
+
+	node{
+
+		stage('deploy-to-server'){
+
+			print 'download the package from nexus'
+
+			nexusURL="http://18.119.125.175:8081/nexus/content/repositories" //nexusURL=params.nexusURL (if jenkins parameters configured)
+			repoName="releases"                                              //repoName=params.repoName (if jenkins parameters configured)
+			artifactPath="com/devops/devopswebapp"
+			artifactName="DevOpsWebApp"
+			artifactVersion="1.0.6"
+			packageType="war"
+
+
+			withCredentials([usernamePassword(credentialsId: 'jenkinsnexus', passwordVariable: 'nexusPassWrd', usernameVariable: 'nexusUsrName')]) {
+			    sh"""
+				#(this is commented - if wget installed on your jenkins, you can use this command) wget --user ${nexusUsrName} --password ${nexusPassWrd} http://18.119.125.175:8081/nexus/content/repositories/releases/com/devops/devopswebapp/DevOpsWebApp/1.0.6/DevOpsWebApp-1.0.6.war
+
+
+				curl -u ${nexusUsrName}:${nexusPassWrd} ${nexusURL}/${repoName}/${artifactPath}/${artifactName}/${artifactVersion}/${artifactName}-${artifactVersion}.${packageType} --output ${artifactName}-${artifactVersion}.${packageType} 
+			    """
+			}
+
+
+			//connect to tomcat/jboss or any appication serevr and then deploy to servers - the deployment script will have to write here
+		}
+	}
+
+	*/
+
