@@ -1,5 +1,14 @@
 *JenkinsSetup*: https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 
+**Name the server**:
+
+    sudo -i
+
+    hostname Jenkins-Master
+    
+    echo "Jenkins-Master" > /etc/hostname
+    
+
 **Install Java**:
 
     #Update the repositories
