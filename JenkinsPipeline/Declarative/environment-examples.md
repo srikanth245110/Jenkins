@@ -1,7 +1,6 @@
 **Examples of environment section in declarative pipleine**
 
   
-    sh 'printenv'
     
     pipeline{
         agent any
