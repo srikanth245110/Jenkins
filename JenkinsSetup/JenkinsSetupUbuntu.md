@@ -8,6 +8,12 @@
     
     echo "Jenkins-Master" > /etc/hostname
     
+    exit
+    
+    exit
+    
+    conenct again
+    
 
 **Install Java**:
 
